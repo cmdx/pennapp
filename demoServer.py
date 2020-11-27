@@ -16,8 +16,8 @@ sending = False
 moFields = ["FacilityID", "PatientID", "Modality", "Location", "Date", "Time", "Value"]
 patientFields = ["name", "roomid", "roomnumber", "patientid"]
 initFields = ["hospname", "roomId", "room", "patientId", "patientname"]
-dataFile = "himss.moberg.demo.csv"
-initFile = "moInitVals.csv"
+dataFile = "penn.demo.moberg.csv"
+initFile = "pennInitVals.csv"
 
 roomIds = []
 rooms = [
@@ -84,7 +84,7 @@ def normalizeMod(modality, location, value):
         print(e)
         return -99
 
-hospitalName = {'facilityId': 'DemoHospital', 'title': 'HIMSS 2020'}
+hospitalName = {'facilityId': 'DemoHospital', 'title': 'PennDemo Hospital'}
 shift = {'name': 'Not Set'}
 
 customs = {'c1': 0, 'c2': 0, 'c3': 0,  # burden
@@ -345,6 +345,8 @@ def disconnect(sid):
 
 if __name__ == '__main__':
     # wrap Flask application with socketio's middleware
+    print("Create app...")
     app = socketio.Middleware(sio, app)
     # deploy as an eventlet WSGI server
-    eventlet.wsgi.server(eventlet.listen(('', 8080)), app)
+    print("Start Listener...")
+    eventlet.wsgi.server(eventlet.listen(('', 5000)), app)

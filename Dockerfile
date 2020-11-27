@@ -8,11 +8,11 @@ WORKDIR /app
 
 COPY . /app/
 
-RUN unzip data.zip
+RUN unzip -j data.zip
 
 RUN pip install -r requirements.txt
 
-EXPOSE 8080
+EXPOSE 5000
 
 RUN groupadd -r moberg
 RUN useradd --no-log-init -r -g moberg moberg
