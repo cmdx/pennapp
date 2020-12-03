@@ -84,7 +84,7 @@ def normalizeMod(modality, location, value):
         print(e)
         return -99
 
-hospitalName = {'facilityId': 'DemoHospital', 'title': 'PennDemo Hospital'}
+hospitalName = {'facilityId': 'DemoHospital', 'title': 'Penn Demo'}
 shift = {'name': 'Not Set'}
 
 customs = {'c1': 0, 'c2': 0, 'c3': 0,  # burden
